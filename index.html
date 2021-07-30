@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="tip_calculator_style.css" rel="stylesheet" media="all"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <title>Tip calculator app</title>
+
+  
+</head>
+<body>
+  <div class="header">
+  <div>SPLI</div>
+  <div>TIER</div>
+  </div>
+<div class="calculator_section">
+  <div class="calculator_desing">
+    <div class="amount_section">
+      <div class="bill_section">
+        <div class="bill_h">
+          Bill
+        </div>
+        <div class="bill_amount">
+          <i class="fas fa-dollar-sign"></i>
+          <input type="text" dir="rtl"  id="bill_pay">
+        </div>
+      </div>
+      <div class="tip_section">
+        <div class="tip_h">
+          Select Tip    %
+        </div>
+        <div class="available_amount">
+          <div data-amount="0.05" class="amount one">5%</div>
+          <div data-amount="0.1" class="amount two">10%</div>
+          <div data-amount="0.15" class="amount three">15%</div>
+          <div data-amount="0.25" class="amount four">25%</div>  
+          <div data-amount="0.5" class="amount five">50%</div>
+          <input type="text" dir="rtl" name=""  id="custom_amount">
+        </div>
+      </div>
+      <div class="people_number">
+        <div class="people_header">
+          <div class="amount_people">
+            Number of People
+          </div>
+          <div class="warning">
+            
+          </div>
+        </div>
+        <div class="people_input">
+          <i class="far fa-user"></i>
+          <input type="text" dir="rtl"  class="poeple_amount">
+        </div>
+      </div>
+    </div>
+    <div class="result_section">
+      <div class="tip_pd">
+        <div class="tip_section">
+          <div class="tip_amount_fr">
+            <div class="tip_name">
+              <div class="tip_header">
+                Tip Amount
+              </div>
+              <div class="tip_amount_sc">
+                / person
+              </div>
+            </div>
+            <div class="tip_total">
+              $0.00
+            </div>
+          </div>
+          <div class="total_per_person">
+            <div class="total_header">
+              <div class="tp_h_fr">
+                Total
+              </div>
+              <div class="tp_h_sc">
+                / person
+              </div>
+            </div>
+            <div class="total_amount">
+              $0.00
+            </div>
+          </div>
+        </div>
+        <div class="reset_section">
+          <button class="reset">RESET</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+</body>
+<script src="tip_calculator_app.js"></script>
+</html>

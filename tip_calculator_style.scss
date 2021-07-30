@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+@import "./var";
+@mixin mobile-desing {
+  @media (max-width: $mobile-desing-one) {
+    @content;
+  }
+}
+@mixin mobile-design-two {
+  @media (max-width: $mobile-desing-two) {
+    @content;
+  }
+}
+@mixin mobile-desing-three {
+  @media (max-width: $mobile-desing-three) {
+    @content;
+  }
+}
+@mixin flexDesing($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@function fontSize($fontName) {
+  @return map-get($font-size, $fontName);
+}
+@function fontWeight($weightName) {
+  @return map-get($font-weight, $weightName);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  background-color: $primary-color;
+  @include flexDesing(column, center, center);
+}
+.header {
+  color: $header-color;
+  margin-bottom: 40px;
+  font-weight: fontWeight(bold);
+  font-size: fontSize(normal-size);
+  & * {
+    letter-spacing: 3px;
+  }
+}
+.calculator_section {
+  background-color: $calculator-color;
+  border-radius: 20px;
+  width: 70%;
+  height: 400px;
+  @include mobile-desing {
+    height: 500px;
+  }
+  @include mobile-design-two {
+    height: 800px;
+  }
+  @include mobile-desing-three {
+    width: 100%;
+  }
+}
+.calculator_desing {
+  margin: 50px;
+  display: flex;
+  flex-direction: row;
+  @include mobile-design-two {
+    flex-direction: column;
+  }
+  @include mobile-desing-three {
+    margin: 50px 5px;
+  }
+  & .amount_section {
+    width: 50%;
+    height: 330px;
+    @include mobile-design-two {
+      width: 100%;
+    }
+  }
+  & .result_section {
+    width: 50%;
+    height: 330px;
+    @include mobile-design-two {
+      width: 100%;
+    }
+  }
+}
+.bill_section {
+  width: 80%;
+  margin-bottom: 20px;
+  @include mobile-design-two {
+    width: 100%;
+  }
+  & .bill_h {
+    height: 30px;
+    color: $header-color;
+    font-size: fontSize(normal-size);
+    font-weight: fontWeight(bold);
+  }
+  & .bill_amount {
+    width: inherit;
+    position: relative;
+    & i {
+      position: absolute;
+      top: 30%;
+      left: 4%;
+      color: $input-text-color;
+      z-index: 111;
+    }
+    & #bill_pay {
+      width: 100%;
+      height: 40px;
+      border: none;
+      outline: none;
+      padding-right: 4%;
+      font-weight: fontWeight(bold);
+      color: $input-text-color;
+      background-color: $input-color;
+      &:focus {
+        border: 3px solid $button-color-two;
+      }
+    }
+  }
+}
+
+.tip_section {
+  padding-top: 2%;
+  & .tip_h {
+    color: $header-color;
+    font-size: fontSize(normal-size);
+    font-weight: fontWeight(bold);
+  }
+  & .available_amount {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: auto auto auto;
+    @include mobile-desing {
+      grid-template-columns: auto auto;
+    }
+    @include mobile-design-two {
+      grid-template-columns: auto auto auto;
+    }
+    @include mobile-desing-three {
+      grid-template-columns: auto auto;
+    }
+    & [class^="amount"] {
+      cursor: pointer;
+      width: 80px;
+      height: 40px;
+      margin: 4px;
+      border-radius: 5px;
+      color: $calculator-color;
+      @include flexDesing(row, center, center);
+      font-weight: fontWeight(bold);
+      background-color: $button-color;
+      &:hover,
+      &:focus {
+        background-color: $button-color-two;
+        color: $header-color;
+      }
+    }
+    & .active {
+      background-color: $button-color-two;
+      color: $header-color;
+    }
+    & #custom_amount {
+      position: relative;
+      top: 5px;
+      left: 5px;
+      width: 80px;
+      border: none;
+      outline: none;
+      height: 40px;
+      padding-right: 5px;
+      color: $input-text-color;
+      font-weight: fontWeight(bold);
+      font-size: fontSize(normal-size);
+      background-color: $input-color;
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        cursor: text;
+        border: 3px solid $button-color-two;
+      }
+    }
+  }
+}
+.people_number {
+  margin-top: 20px;
+  color: $header-color;
+  @include mobile-design-two {
+    width: 100%;
+  }
+  & .people_header {
+    width: 60%;
+    @include mobile-design-two {
+      width: 100%;
+    }
+    @include flexDesing(row, space-between, flex-start);
+    margin-bottom: 10px;
+    & .warning {
+      color: $warning-text;
+    }
+  }
+  & .people_input {
+    position: relative;
+    & i {
+      position: absolute;
+      left: 10px;
+      top: 7px;
+    }
+    & .poeple_amount {
+      width: 60%;
+      @include mobile-design-two {
+        width: 100%;
+      }
+      height: 30px;
+      background-color: $input-color;
+      border: none;
+      outline: none;
+      padding-right: 10px;
+      color: $input-text-color;
+      font-weight: fontWeight(bold);
+      font-size: fontSize(normal-size);
+    }
+  }
+}
+.result_section {
+  background-color: $header-color;
+  border-radius: 10px;
+  @include mobile-desing-three {
+    margin-top: 30%;
+  }
+  & .tip_pd {
+    padding: 30px;
+    & .tip_amount_fr {
+      @include flexDesing(row, space-between, flex-start);
+      & .tip_name {
+        margin-bottom: 30px;
+        & .tip_header {
+          color: $calculator-color;
+          margin-bottom: 5px;
+        }
+        & .tip_amount_sc {
+          color: $input-text-color;
+        }
+      }
+      & .tip_total {
+        color: $button-color-two;
+        font-size: fontSize(big-size);
+      }
+    }
+    & .total_per_person {
+      @include flexDesing(row, space-between, flex-start);
+      & .total_header {
+        margin-bottom: 90px;
+        & .tp_h_fr {
+          color: $calculator-color;
+          margin-bottom: 5px;
+        }
+        & .tp_h_sc {
+          color: $input-text-color;
+        }
+      }
+      & .total_amount {
+        color: $button-color-two;
+        font-size: fontSize(big-size);
+      }
+    }
+  }
+}
+.reset_section {
+  width: 100%;
+  & .reset {
+    &:hover {
+      cursor: pointer;
+      background-color: $button-color-two;
+    }
+    width: 100%;
+    height: 30px;
+    background-color: $input-text-color;
+    color: $header-color;
+    font-weight: fontWeight(bold);
+    @include flexDesing(row, center, center);
+  }
+}

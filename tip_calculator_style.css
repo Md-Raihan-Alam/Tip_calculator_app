@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  background-color: #c5e4e7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header {
+  color: #00494d;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.header * {
+  letter-spacing: 3px;
+}
+
+.calculator_section {
+  background-color: white;
+  border-radius: 20px;
+  width: 70%;
+  height: 400px;
+}
+
+@media (max-width: 1247px) {
+  .calculator_section {
+    height: 500px;
+  }
+}
+
+@media (max-width: 700px) {
+  .calculator_section {
+    height: 800px;
+  }
+}
+
+@media (max-width: 500px) {
+  .calculator_section {
+    width: 100%;
+  }
+}
+
+.calculator_desing {
+  margin: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 700px) {
+  .calculator_desing {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .calculator_desing {
+    margin: 50px 5px;
+  }
+}
+
+.calculator_desing .amount_section {
+  width: 50%;
+  height: 330px;
+}
+
+@media (max-width: 700px) {
+  .calculator_desing .amount_section {
+    width: 100%;
+  }
+}
+
+.calculator_desing .result_section {
+  width: 50%;
+  height: 330px;
+}
+
+@media (max-width: 700px) {
+  .calculator_desing .result_section {
+    width: 100%;
+  }
+}
+
+.bill_section {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .bill_section {
+    width: 100%;
+  }
+}
+
+.bill_section .bill_h {
+  height: 30px;
+  color: #00494d;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.bill_section .bill_amount {
+  width: inherit;
+  position: relative;
+}
+
+.bill_section .bill_amount i {
+  position: absolute;
+  top: 30%;
+  left: 4%;
+  color: #7f9c9f;
+  z-index: 111;
+}
+
+.bill_section .bill_amount #bill_pay {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding-right: 4%;
+  font-weight: 700;
+  color: #7f9c9f;
+  background-color: #f4fafa;
+}
+
+.bill_section .bill_amount #bill_pay:focus {
+  border: 3px solid #26c0ab;
+}
+
+.tip_section {
+  padding-top: 2%;
+}
+
+.tip_section .tip_h {
+  color: #00494d;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.tip_section .available_amount {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 10px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+@media (max-width: 1247px) {
+  .tip_section .available_amount {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .tip_section .available_amount {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .tip_section .available_amount {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+.tip_section .available_amount [class^="amount"] {
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  margin: 4px;
+  border-radius: 5px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  background-color: #00494d;
+}
+
+.tip_section .available_amount [class^="amount"]:hover, .tip_section .available_amount [class^="amount"]:focus {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.tip_section .available_amount .active {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.tip_section .available_amount #custom_amount {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 80px;
+  border: none;
+  outline: none;
+  height: 40px;
+  padding-right: 5px;
+  color: #7f9c9f;
+  font-weight: 700;
+  font-size: 17px;
+  background-color: #f4fafa;
+}
+
+.tip_section .available_amount #custom_amount:hover {
+  cursor: pointer;
+}
+
+.tip_section .available_amount #custom_amount:focus {
+  cursor: text;
+  border: 3px solid #26c0ab;
+}
+
+.people_number {
+  margin-top: 20px;
+  color: #00494d;
+}
+
+@media (max-width: 700px) {
+  .people_number {
+    width: 100%;
+  }
+}
+
+.people_number .people_header {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+  .people_number .people_header {
+    width: 100%;
+  }
+}
+
+.people_number .people_header .warning {
+  color: #f03b3b;
+}
+
+.people_number .people_input {
+  position: relative;
+}
+
+.people_number .people_input i {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+
+.people_number .people_input .poeple_amount {
+  width: 60%;
+  height: 30px;
+  background-color: #f4fafa;
+  border: none;
+  outline: none;
+  padding-right: 10px;
+  color: #7f9c9f;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+@media (max-width: 700px) {
+  .people_number .people_input .poeple_amount {
+    width: 100%;
+  }
+}
+
+.result_section {
+  background-color: #00494d;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .result_section {
+    margin-top: 30%;
+  }
+}
+
+.result_section .tip_pd {
+  padding: 30px;
+}
+
+.result_section .tip_pd .tip_amount_fr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.result_section .tip_pd .tip_amount_fr .tip_name {
+  margin-bottom: 30px;
+}
+
+.result_section .tip_pd .tip_amount_fr .tip_name .tip_header {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.result_section .tip_pd .tip_amount_fr .tip_name .tip_amount_sc {
+  color: #7f9c9f;
+}
+
+.result_section .tip_pd .tip_amount_fr .tip_total {
+  color: #26c0ab;
+  font-size: 28px;
+}
+
+.result_section .tip_pd .total_per_person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.result_section .tip_pd .total_per_person .total_header {
+  margin-bottom: 90px;
+}
+
+.result_section .tip_pd .total_per_person .total_header .tp_h_fr {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.result_section .tip_pd .total_per_person .total_header .tp_h_sc {
+  color: #7f9c9f;
+}
+
+.result_section .tip_pd .total_per_person .total_amount {
+  color: #26c0ab;
+  font-size: 28px;
+}
+
+.reset_section {
+  width: 100%;
+}
+
+.reset_section .reset {
+  width: 100%;
+  height: 30px;
+  background-color: #7f9c9f;
+  color: #00494d;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.reset_section .reset:hover {
+  cursor: pointer;
+  background-color: #26c0ab;
+}
+/*# sourceMappingURL=tip_calculator_style.css.map */
