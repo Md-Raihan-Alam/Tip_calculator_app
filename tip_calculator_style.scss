@@ -258,6 +258,7 @@ body {
     }
     & .total_per_person {
       @include flexDesing(row, space-between, flex-start);
+      height:120px;
       & .total_header {
         margin-bottom: 90px;
         & .tp_h_fr {
