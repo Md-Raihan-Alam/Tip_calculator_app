@@ -28,7 +28,6 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ## Author
 
---Twitter:https://twitter.com/MdRaiha48799193
 --linedin:https://www.linkedin.com/in/md-raihan-alam-211b57218/
 
 ### Tahnks for viewing my site
